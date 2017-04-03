@@ -1,5 +1,5 @@
-#show-destination {
-  display: none;
+#show-tasks {
+  /*display: none;*/
 }
 
 .destination {
@@ -9,4 +9,8 @@
 
 .destination:hover {
   text-decoration: underline;
+}
+
+#btn2 {
+  display: none;
 }
