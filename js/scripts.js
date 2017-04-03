@@ -11,17 +11,27 @@ function Task(task) {
 
     $("input#new-task").val("");
 
-    $("ul#tasks").append('<li>'+'<div class="checkbox">' + '<input type="checkbox" value=" ">' + newTask.task + '</div>'+'</li>');
+    $("ul#tasks").append('<p>'+'<div class="checkbox">' + '<input type="checkbox" value="" name="tasksToDo">' + newTask.task + '</div>'+'<p>');
 
     $("#btn2").show();
   });
 
-  $("#btn2").click(function(){
-    var checked = [];
-           $.each($("input[name='tasksToDo']:checked"), function(){
-               checked.push($(this).val());
-               console.log($(this).val());
-           });
+  // $("#btn2").click(function(){
+  //   var checked = [];
+  //         $("ul#tasks").each(function(){
+  //           if ($(this).is(':checked')) {
+  //               checked.push($(this));
+  //             }
+  //              console.log(checked);
+  //          });
+  //        });
+
+  $("#btn2").on("click",function(){
+      $("input:checkbox").each(function() {
+          if ($(this).is(":checked")) {
+              $(this).parent().remove();
+          }
+      });
   });
 
 
